@@ -301,10 +301,10 @@ export const applianceCategory =[
 export const products=[
     {
         id:1,
-        img:'https://img.freepik.com/premium-psd/laptop-psd-mockup-with-gradient-led-light_53876-138283.jpg?w=740',
-        imgSm_1:'https://img.freepik.com/premium-psd/laptop-psd-mockup-with-gradient-led-light_53876-138283.jpg?w=740',
-        imgSm_2:'https://img.freepik.com/premium-psd/laptop-psd-mockup-with-gradient-led-light_53876-138283.jpg?w=740',
-        imgSm_3:'https://img.freepik.com/premium-psd/laptop-psd-mockup-with-gradient-led-light_53876-138283.jpg?w=740',
+        img:'https://img.freepik.com/premium-photo/purse-with-gold-red-design-is-shown-white-background_688921-2289.jpg?w=740',
+        imgSm_1:'https://img.freepik.com/premium-photo/elegance-woman-luxury-hand-bag-white-background-generative-ai_838900-8451.jpg?w=740',
+        imgSm_2:'https://img.freepik.com/premium-photo/elegance-woman-luxury-hand-bag-white-background-generative-ai_838900-8468.jpg?w=740',
+        imgSm_3:'https://img.freepik.com/premium-photo/stylish-brown-leather-tote-bag-isolated-white-background-created-with-generative-ai-technology_410516-52009.jpg?w=740',
         title:'3 piece of earpiece',
         price:'2200',
         initialPrice:'7000',

@@ -1,4 +1,71 @@
 .product{
     background:#E5E4E2;
     padding: 1rem 2rem;
+
+    .product-wrapper{
+        display:flex;
+        justify-content: space-between;
+        gap:1rem;
+        .left-product{
+            width:80%;
+            background:#fff;
+            padding:1.5rem;
+            border-radius: 0.3rem;
+            .product-info{
+                display:flex;
+                gap:1rem;
+
+                .product-slide{
+                    width:40%;
+                    .preview{
+                        width:100%;
+                        height:20rem;
+                        border-radius: 0.3rem;
+                        transition: transform 0.5s ease-in-out;
+
+                        &-enter{
+                            transform: scale(0);
+                        }
+                        &-enter-active{
+                            transform: scale(1);
+                        }
+                        &-exit{
+                            transform: scale(1);
+                        }
+                        &-exit-active{
+                            transform: scale(0);
+                        }
+                        img{
+                            object-fit: cover;
+                            border-radius: 0.3rem;
+                        }
+                      
+                    }
+                    .thumbnails{
+                        display:flex;
+                        justify-content: space-between;
+                        margin-top: 1rem;
+
+                        img{
+                            width:18%;
+                            height:3rem;
+                            cursor:pointer;
+                            transition: opacity 0.3s;
+
+                            &:hover{
+                                opacity:0.8;
+                            }
+                        }
+                    }
+                }
+                .product-details{
+                    width:60%;
+                }
+            }
+        }
+        .right-product{
+            width:20%;
+            background:#fff;
+        }
+    }
 }
