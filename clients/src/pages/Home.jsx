@@ -7,6 +7,8 @@ import AdvertSection3 from '../components/AdvertSection3';
 import PhoneDeals from '../components/PhoneDeals';
 import BestPhoneDeals from '../components/BestPhoneDeals';
 import ApplianceDeal from '../components/ApplianceDeal';
+import BestApplianceDeal from '../components/BestApplianceDeal';
+import OurCollection from '../components/OurCollection';
 
 const Home = () => {
   return (
@@ -19,6 +21,8 @@ const Home = () => {
       <PhoneDeals/>
       <BestPhoneDeals/>
       <ApplianceDeal/>
+      <BestApplianceDeal/>
+      <OurCollection/>
     </div>
   )
 }

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { phoneCategory } from '../data';
+import { applianceCategory } from '../data';
 import './appliance.scss';
 
 const ApplianceDeal = () => {
@@ -8,7 +8,7 @@ const ApplianceDeal = () => {
          <h1>Best Appliance Deals</h1>
         <div className='appliance-wrapper'>
             {
-                phoneCategory.map((item)=>(
+                applianceCategory.map((item)=>(
                     <Link to={`/products/${item.cat}`} className='link phone-cat'>
                     <div className='content'>
                         <img src={item.img} alt="" />
