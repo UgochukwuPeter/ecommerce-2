@@ -430,3 +430,36 @@ export const products=[
         model:'MX2345',
     },
 ];
+export const singleProduct=[
+    {
+        id:1,
+        img:'https://img.freepik.com/premium-photo/purse-with-gold-red-design-is-shown-white-background_688921-2289.jpg?w=740',
+        imgSm_1:'https://img.freepik.com/premium-photo/elegance-woman-luxury-hand-bag-white-background-generative-ai_838900-8451.jpg?w=740',
+        imgSm_2:'https://img.freepik.com/premium-photo/elegance-woman-luxury-hand-bag-white-background-generative-ai_838900-8468.jpg?w=740',
+        imgSm_3:'https://img.freepik.com/premium-photo/stylish-brown-leather-tote-bag-isolated-white-background-created-with-generative-ai-technology_410516-52009.jpg?w=740',
+        title:'3 piece of earpiece',
+        price:'2200',
+        initialPrice:'7000',
+        totalItem: '50',
+        itemLeft:'32',
+        brand:'AGM',
+        cat:'Android-Tablets',
+        outOfStock:false,
+        payOnDelivery: true,
+        shipping_Address:'London',
+        shipping_fee:'1500',
+        company_name:'Smark',
+        about_company:'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore reiciendis voluptas, architecto voluptatum at accusantium expedita dolor illo ad, fugit voluptates fuga! Fugit numquam error quo mollitia maiores earum reiciendis!',
+        product_detail:"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore reiciendis voluptas, architecto voluptatum at accusantium expedita dolor illo ad, fugit voluptates fuga! Fugit numquam error quo mollitia maiores earum reiciendis!",
+        specification:['Lorem ipsum, dolor sit amet consectetur adipisicing elit', 'Lorem ipsum, dolor sit amet consectetur adipisicing elit','Lorem ipsum, dolor sit amet consectetur adipisicing elit'],
+        box_content:['Lorem ipsum, dolor','Lorem ipsum, dolor'],
+        product_line:'Smark',
+        color:'yellow',
+        model:'MX2345',
+    }
+];
+export const getState ={
+    "Abia":["Aba North", "Aba South"],
+    "Adamawa":["Demsa", "Ganye"],
+    "Lagos":["Alimosho", "Ikeja","Oshodi", "Bariga", "Lekki-Ajah(Sangotedo)",],
+}
