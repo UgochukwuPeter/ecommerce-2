@@ -13,7 +13,7 @@ import Adverts from './components/Adverts';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Sell from './components/Sell';
-
+import { FacebookProvider} from 'react-facebook';
 const Layout =()=>{
   return(
     <div>
@@ -40,7 +40,7 @@ const router  = createBrowserRouter([
       },
        {
         path:"/product/:id",
-        element:<Product/>
+        element: <FacebookProvider appId='970187250958916'><Product/></FacebookProvider>
       },
       {
         path:"/cart",

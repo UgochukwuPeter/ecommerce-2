@@ -1,15 +1,35 @@
 import './product.scss';
 import { getState, products, singleProduct } from '../data';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import {CSSTransition} from 'react-transition-group';
 import moment from 'moment';
 import RelatedProducts from '../components/RelatedProducts';
+import ProgressBar    from '../components/ProgressBar';
 import { Link } from 'react-router-dom';
+import { useShare } from 'react-facebook';
+
 const Product = () => {
+  const [selectedItems, setSelectedItems] = useState(null);
+  const isArrayEmpty = array => array.length === 0;
+  const { share } = useShare();
   const[selectedIndex, setSelectedIndex] = useState(0);
   const [selectedState, setSelectedState] = useState("");
   const [selectedLGA, setSelectedLGA] = useState("");
   const [showLGAOptions, setShowLGAOptions] = useState(false);
+  const [timeLeft, setTimeLeft]  = useState(365 *24 * 60 * 60 *1000);
+
+  useEffect(()=>{
+    const timerId = setInterval(()=>{
+     setTimeLeft((prevTime)=> prevTime - 1000);
+    }, 1000);
+
+    return ()  =>{
+     clearInterval(timerId);
+    };
+ }, []);
+ const  timeLeftDisplay = formatTime(timeLeft);
+
+
   const  firstImg = products[0].img;
   const  secondImg  = products[0].imgSm_1;
   const  thirdImg  =  products[0].imgSm_2;
@@ -28,7 +48,36 @@ const Product = () => {
   const handleLGAChange = (event) => {
     setSelectedLGA(event.target.value);
   };
+  //facebook data.
+  const shareImg = singleProduct[0].img;
+  const shareTitle = singleProduct[0].title;
+  const sharePrice = singleProduct[0].price;
+  const shareLink = `/product/${singleProduct[0].id}`;
 
+  const handleShare = () => {
+    const product = {
+      title: shareTitle,
+      image: shareImg,
+      price: sharePrice,
+    };
+
+    share({
+      href: shareLink,
+      quote: `Checkout this awesome product: ${product.title} for ${product.price}!`,
+      hashtag: '#ProductSharing',
+      media: [
+        {
+          type: 'image',
+          src: product.image,
+          alt: product.title,
+        },
+      ],
+    });
+  };
+  const handleItemClick = (size) => {
+  
+    setSelectedItems(size);
+  };
 const now = new Date();
 const oneHourFromNow = new Date(now.getTime() + 1 * 60 * 60 * 1000);
 const fiveDaysFromOneHour = new Date(oneHourFromNow.getTime() + 5 * 24 * 60 * 60 * 1000);
@@ -53,7 +102,7 @@ const month = fiveDaysFromOneHour.toLocaleString('default', { month: 'long' });
                     <div className='product-share'>
                       <h1>Share this product</h1>
                       <div className='share-icon'>
-                      <i class='bx bxl-facebook'></i>
+                        <i class='bx bxl-facebook' onClick={handleShare}></i>
                       <i class='bx bxl-twitter'></i>
                       </div>
                     </div>
@@ -63,12 +112,58 @@ const month = fiveDaysFromOneHour.toLocaleString('default', { month: 'long' });
                     singleProduct.map((item)=>(
                       <div className='product-detail-wrapper'>
                     <h1>{item.title}</h1>
-                    <div className='product-detail-price' key={item.id}>
+                    {
+                      item.flashSale === true ?
+                      (
+                        <div className='product-flash'>
+                          <div className='product-flash-header'>
+                            <p>Flash Sales</p>
+                            <p>Time Left: {timeLeftDisplay}</p>
+                          </div>
+                          <div className='product-detail-price' key={item.id}>
+                              <p className='c-price'><span>N</span>{item.price}</p>
+                              {item.initialPrice ? <p className='i-price'>N{item.initialPrice}</p>: ''}
+                              {item.initialPrice !== '' && <p className='i-percent'>{(((item.price - item.initialPrice)/item.initialPrice)  *  100).toFixed()}%</p> }
+                          </div>
+                          <div className='product-flash-left'>
+                            <p>{item.itemLeft} items left</p>
+                            <ProgressBar totalItems={item.totalItem} itemsLeft={item.itemLeft}/>
+                          </div>
+                        </div>
+                      ):(
+                      <div className='product-detail-price' key={item.id}>
                       <p className='c-price'><span>N</span>{item.price}</p>
                       {item.initialPrice ? <p className='i-price'>N{item.initialPrice}</p>: ''}
                       {item.initialPrice !== '' && <p className='i-percent'>{(((item.price - item.initialPrice)/item.initialPrice)  *  100).toFixed()}%</p> }
-                    </div>
+                      </div>
+                      )}
                     <p className='product-detail-ship'>+Shipping from N{item.shipping_fee} from {item.shipping_Address}</p>
+                    {
+                      isArrayEmpty(item.size) ? '':(
+                        <div className='varation'>
+                        <h1>Variation Available</h1>
+                          <ul>
+                            {
+                             singleProduct.map((product) => {
+                              return product.size.map((v, index) => (
+                                <li
+                                  key={index}
+                                  onClick={() => handleItemClick(v)}
+                                  style={{
+                                    backgroundColor: selectedItems === v ? '#8A9A5B' : 'white',
+                                    color: selectedItems === v ? 'white' : '#8A9A5B',
+                                  }}
+                                >
+                                  {v}
+                                </li>
+                              ))
+                            })
+                            }
+                          </ul>
+                        </div>
+                      )
+                      
+                    }
                     <button className='cart-btn'><i class='bx bx-cart'></i> Add to Cart</button>
                   </div>
                     ))
@@ -181,6 +276,13 @@ const month = fiveDaysFromOneHour.toLocaleString('default', { month: 'long' });
         </div>
     </div>
   )
+};
+const formatTime = (time)=>{
+  const hours =  Math.floor(time/(1000 * 60 * 60));
+  const minutes  = Math.floor((time / (1000 * 60)) % 60);
+  const seconds = Math.floor((time / 1000) % 60);
+
+  return `${hours}h:  ${minutes}m:  ${seconds}s`;
 }
 
 export default Product

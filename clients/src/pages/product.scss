@@ -95,6 +95,36 @@
                             padding-bottom: 1rem;
                             border-bottom: 1px solid #E5E4E2;
                         }
+                        .product-flash{
+                            border:2px solid crimson;
+                            border-radius: 0.2rem;
+                            padding-bottom:0.5rem;
+                            margin:1rem 0;
+                            .product-flash-header{
+                                background:crimson;
+                                padding:0.3rem;
+                                display:flex;
+                                justify-content: space-between;
+                                align-items: center;
+                                color:white;
+                            
+                                p{
+                                    font-size: 0.8rem;
+                                }
+                            }
+                            .product-detail-price{
+                                padding: 0 0.2rem;
+                            }
+                            .product-flash-left{
+                                padding:0 0.2rem;
+                                display:flex;
+                                align-items: center;
+                                gap:0.5rem;
+                                p{
+                                    width:20%;
+                                }
+                            }
+                        }
                         .product-detail-price{
                             margin:1rem 0;
                             display:flex;
@@ -117,6 +147,24 @@
                         }
                         .product-detail-ship{
                             margin-bottom: 0.5rem;
+                        }
+                        .varation{
+                            border-top:1px solid #E5E4E2;
+                            padding:0.5rem;
+                            h1{
+                                border-bottom: none;
+                                font-size: 1.2rem;
+                            }
+                            ul{
+                                li{
+                                    list-style: none;
+                                    display:inline;
+                                    padding:0.5rem;
+                                    cursor:pointer;
+                                    border:1px solid #E5E4E2;
+                                    margin-right:0.3rem;
+                                }
+                            }
                         }
                         .cart-btn{
                             width:100%;
