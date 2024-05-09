@@ -463,6 +463,20 @@ export const singleProduct=[
         model:'MX2345',
     }
 ];
+export const cart =[
+    // {
+    //     id:1,
+    //     img:'https://img.freepik.com/premium-photo/purse-with-gold-red-design-is-shown-white-background_688921-2289.jpg?w=740',
+    //     title:'3 piece of earpiece',
+    //     price:'2200',
+    // },
+    // {
+    //     id:2,
+    //     img:'https://img.freepik.com/premium-photo/purse-with-gold-red-design-is-shown-white-background_688921-2289.jpg?w=740',
+    //     title:'3 piece of earpiece',
+    //     price:'2200',
+    // }
+];
 export const getState ={
     "Abia":["Aba North", "Aba South"],
     "Adamawa":["Demsa", "Ganye"],
