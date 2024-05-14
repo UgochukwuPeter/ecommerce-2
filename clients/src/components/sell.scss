@@ -1,9 +1,15 @@
+$breakpointSm: 600px;
+$breakpoint_min_Md:601px;
+$breakpoint_max_Md:800px;
 .sell{
     background:#E5E4E2;
     width:100%;
     display:flex;
     justify-content: space-between;
     padding: 0.5rem 3rem;
+    @media(max-width: $breakpointSm){
+      display:none;
+    }
     .left{
         width:50%;
         display:flex;

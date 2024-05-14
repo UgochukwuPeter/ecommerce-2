@@ -9,6 +9,9 @@ import Home from './pages/Home';
 import Cart from './pages/Cart';
 import Products from './pages/Products';
 import Product from './pages/Product';
+import Register from './pages/Register';
+import Login from './pages/Login';
+import Dashboard from  './pages/Dashboard';
 import Adverts from './components/Adverts';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -45,13 +48,23 @@ const router  = createBrowserRouter([
       {
         path:"/cart",
         element:<Cart/>
+      },
+      {
+        path:"/dashboard",
+        element:<Dashboard/>
       }
 
     ]
   },
-  
- 
-])
+  {
+    path: "/register",
+    element: <Register />
+  },
+  {
+    path: "/login",
+    element: <Login />
+  }
+]);
 function App() {
   return (
     <div className="App">
