@@ -13,7 +13,7 @@ const handleCheckout = () => {
   if (user) {
     alert('payment received');
   } else {
-    navigate('/register');
+    navigate('/login');
   }
 };
 

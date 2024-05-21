@@ -1,3 +1,4 @@
+$breakpointSm: 600px;
 .slideshow{
     position: relative;
     overflow: hidden;
@@ -7,6 +8,9 @@
         height:26.5rem;
         display: none;
         border-radius: 0.3rem;
+        @media(max-width: $breakpointSm){
+            height:10rem;
+        }
 
         &.active{
             display:block;
@@ -28,12 +32,20 @@
                 letter-spacing: 0.2rem;
                 color:white;
                 margin-bottom:1rem;
+                @media(max-width: $breakpointSm){
+                    font-size:1rem;
+                    margin-bottom:0.5rem;
+                }
             }
             p{
                 color:#FFFFF0;
                 text-transform: capitalize;
                 margin-bottom: 1rem;
                 width:80%;
+                @media(max-width: $breakpointSm){
+                    font-size:0.5rem;
+                    margin-bottom:0.5rem;
+                }
             }
             .orders{
                 padding:0.7rem 1rem;
@@ -44,6 +56,10 @@
                 border-radius: 0.3rem;
                 cursor:pointer;
                 text-transform: uppercase;
+                @media(max-width: $breakpointSm){
+                    padding:0.5rem;
+                    font-size: 0.5rem;
+                }
             }
         }
 

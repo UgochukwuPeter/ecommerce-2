@@ -11,15 +11,100 @@ $breakpoint_max_Md:800px;
     position: sticky;
     top:0;
     z-index:999;
+    @media(max-width: $breakpointSm){
+        padding:0.5rem 1.5rem;
+     }
+     .mobile-menu{
+        position:absolute;
+        top:-3.3rem;
+        left:0;
+        width:100%;
+        height:100vh;
+        background:rgba(255,255,255,0.5);
+        z-index: 1;
+        .mobile-menu-wrapper{
+            background:#fff;
+            width:90%;
+            height:100vh;
+            overflow-y: scroll;
+            z-index: 999;
+            .menu-header{
+                padding: 1.5rem 1rem;
+                display:flex;
+                align-items: center;
+                gap:2rem;
+                padding-bottom: 0.7rem;
+                border-bottom: 1px solid #E5E4E2;
+                img{
+                    object-fit: contain;
+                }
+                .menu-logo{
+                    .logo{
+                        display:flex;
+                        align-items: center;
+                    }
+                }
+            }
+            .menu-section-1{
+                padding:1rem; 
+                border-bottom: 1px solid #E5E4E2;
 
+                .account-menu{
+                    text-transform: uppercase;
+                    margin-bottom: 0.7rem;
+                    font-size:0.8rem;
+                }
+                .menu-orders{
+                    display:flex;
+                    gap:1rem;
+                    align-items: center;
+                }
+            }
+            .menu-section-2{
+                padding:1rem;
+
+                .menu-section-2-title{
+                    text-transform: uppercase;
+                    margin-bottom: 0.7rem;
+                    font-size:0.8rem;
+                }
+                .menu-cat-item{
+                    display:flex;
+                    gap:1rem;
+                    align-items: center;
+                    margin-bottom: 1rem;
+                   img{
+                    width:20px;
+                    height:20px;
+                   }
+                }
+            }
+        }
+     }
     .left{
         width:20%;
+        @media(max-width: $breakpointSm){
+            width:50%;
+            display:flex;
+            gap:1rem;
+         }
+         .mobile-open{
+            display:none;
+            @media(max-width: $breakpointSm){
+                display:block;
+                cursor:pointer;
+             }
+         }
         .logo{
             display:flex;
             align-items: center;
         }
         h1{
             font-family: 'Josefin Sans', sans-serif;
+            @media(max-width: $breakpointSm){
+               font-size: 1.2rem;
+            }
+        
         }
         i{
             font-family: 18px;
@@ -32,6 +117,11 @@ $breakpoint_max_Md:800px;
         align-items: center;
         gap:0.5rem;
         width:60%;
+        @media(max-width: $breakpointSm){
+            display:none;
+            width:0;
+        }
+    
         .search{
             width:80%;
             background:white;
@@ -105,6 +195,26 @@ $breakpoint_max_Md:800px;
                         transform: translateY(-50%) rotate(180deg);
                     }
                 }
+                @media(max-width: $breakpointSm){
+                    display:none;
+                  }
+            }
+            .mobile-account{
+                display:none;
+                background:inherit;
+                color:black;
+                outline:none;
+                border:none;
+                font-size: 1.5rem;
+                &:hover{
+                    background:#8A9A5B;
+                    color:#FFF;
+                    padding:0.3rem;
+                    border-radius: 50%;
+                }
+                @media(max-width: $breakpointSm){
+                   display:block
+                 }
             }
             .dropdown-content{
                 position: absolute;
@@ -143,6 +253,12 @@ $breakpoint_max_Md:800px;
             align-items: center;
             gap:0.2rem;
             cursor: pointer;
+
+            .cart-word{
+                @media(max-width: $breakpointSm){
+                    display:none;
+                  }
+            }
         }
     }
 }

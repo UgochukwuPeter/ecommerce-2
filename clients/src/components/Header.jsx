@@ -24,6 +24,9 @@ const Header = () => {
         <Slideshow/>
         </div>
        <div className="right">
+        <div className='advert-1-mobile'>
+          <p>Call To Order: 0816 822 9789</p>
+        </div>
         <div className='advert-1'>
           <div className='advert-container'>
           <i class='bx bx-phone'></i>
