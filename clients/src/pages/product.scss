@@ -1,13 +1,22 @@
+$breakpointSm: 768px;
 .product{
     background:#E5E4E2;
     padding: 1rem 2rem;
-
+    @media(max-width: $breakpointSm){
+        padding:0.5rem;
+    }
     .product-wrapper{
         display:flex;
         justify-content: space-between;
         gap:1rem;
+        @media(max-width: $breakpointSm){
+            flex-direction: column;
+        }
         .left-product{
             width:80%;
+            @media(max-width: $breakpointSm){
+                width:100%;
+            }
             .product-info{
                 background:#fff;
                 padding:1.5rem;
@@ -269,6 +278,9 @@
             background:#fff;
             padding:1.5rem;
             border-radius: 0.3rem;
+            @media(max-width: $breakpointSm){
+                width:100%;
+            }
             .delivery{
                 border-bottom: 1px solid #E5E4E2;
                 padding-bottom: 1rem;

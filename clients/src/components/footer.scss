@@ -1,3 +1,4 @@
+$breakpointSm: 768px;
 .footer{
     width:100%;
 
@@ -7,6 +8,9 @@
         padding: 1.5rem 3rem;
         display:flex;
         justify-content: space-between;
+        @media(max-width: $breakpointSm){
+            display:none;
+        }
         .left{
             width:25%;
             display:flex;
@@ -107,10 +111,17 @@
         color: #fff;
         padding: 1.5rem 3rem;
         height:100vh;
-        
+        @media(max-width: $breakpointSm){
+            background:  #36454F;
+            height:100%;
+            padding:  1rem;
+        }
         .footer-two-wrapper{
             display:flex;
         justify-content: space-between;
+        @media(max-width: $breakpointSm){
+            flex-direction: column;
+        }
         .one{
             h3{
                 margin-bottom:1rem;

@@ -3,6 +3,7 @@ import { flashSales } from '../data';
 import {categories} from '../data'
 import './bestphoneDeals.scss'
 import { ArrowRight} from '@mui/icons-material';
+import ProductCarousel from './ProductCarousel';
 
 const BestPhoneDeals = () => {
     const phone = categories[4].cat;
@@ -20,6 +21,9 @@ const BestPhoneDeals = () => {
             
             </div>
         <div className='topselling-wrapper'>
+        <div className='mobile-flash'>
+            <ProductCarousel products={flashSales} showProgressBar={false} />
+            </div>
             {
                 flashSales.map((items)=>(
             <Link  to={`/product/${items.id}`} className='link content-edit' >

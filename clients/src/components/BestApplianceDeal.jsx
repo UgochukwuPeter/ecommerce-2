@@ -2,7 +2,7 @@ import './bestApplianceDeal.scss';
 import { Link } from 'react-router-dom'
 import { categories, flashSales } from '../data'
 import { ArrowRight } from '@mui/icons-material';
-
+import ProductCarousel from './ProductCarousel';
 const BestApplianceDeal = () => {
     const phone = categories[3].cat;
   return (
@@ -19,6 +19,9 @@ const BestApplianceDeal = () => {
             
             </div>
         <div className='topselling-wrapper'>
+        <div className='mobile-flash'>
+            <ProductCarousel products={flashSales} showProgressBar={false} />
+            </div>
             {
                 flashSales.map((items)=>(
             <Link  to={`/product/${items.id}`} className='link content-edit' >

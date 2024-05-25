@@ -63,7 +63,7 @@ const Footer = () => {
           </ul>
         </div>
         <div className="one">
-          <h3>ABOUT JUMIA</h3>
+          <h3>ABOUT E-COM</h3>
           <ul>
             <li>About Us</li>
             <li>E-Com careers</li>

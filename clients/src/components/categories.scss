@@ -1,9 +1,9 @@
-$breakpointSm: 600px;
+$breakpointSm: 768px;
 .categories{
    background:#E5E4E2;
    padding: 0  2rem;
    @media(max-width: $breakpointSm){
-    padding:0.5rem 1rem;
+    padding:0.5rem 0;
 }
    .category-wrapper{
     background:#fff;

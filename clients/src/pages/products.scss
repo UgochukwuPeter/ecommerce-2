@@ -1,7 +1,10 @@
+$breakpointSm: 768px;
 .products{
     background:#E5E4E2;
     padding: 1rem 2rem;
-
+    @media(max-width: $breakpointSm){
+        padding:0.5rem;
+    }
     .advert{
         width:100%;
         img{
@@ -9,18 +12,28 @@
             height:15rem;
             object-fit: cover;
             border-radius: 0.5rem;
+            @media(max-width: $breakpointSm){
+                height:6rem;
+            }
         }
     }
     .product-wrapper{
         display:flex;
         margin:1rem 0;
         gap:1rem;
+        @media(max-width: $breakpointSm){
+            flex-direction: column-reverse;
+            margin:0.5rem 0;
+        }
         .left{
             width:25%;
             height: fit-content;
             background:#fff;
             border-radius: 0.3rem;
             padding:1rem;
+            @media(max-width: $breakpointSm){
+                width:100%;
+            }
             .category{
                 border-bottom: 1px solid #E5E4E2;
                 padding-bottom: 1rem;
@@ -99,15 +112,23 @@
             background:#fff;
             border-radius: 0.3rem;
             padding:1.5rem;
+            @media(max-width: $breakpointSm){
+                width:100%;
+                padding:0.5rem;
+            }
             .title{
                 border-bottom: 1px solid #E5E4E2;
                 padding-bottom: 1rem;
+
                 h1{
                     font-size: 1.5rem;
                     font-weight: 300;
                     padding-bottom: 1rem;
                     border-bottom: 1px solid #E5E4E2;
                     text-transform: capitalize;
+                    @media(max-width: $breakpointSm){
+                       font-size: 1.1rem;
+                    }
                 }
                 p{
                     padding-top:0.7rem;
@@ -130,6 +151,10 @@
                         box-shadow: 1px 1px 5px rgba(0,0,0,.5);
                         transform: scale(1.1);
                     }
+                    @media(max-width: $breakpointSm){
+                        width:30%;
+
+                     }
                     .content{
                         img{
                             width:100%;
@@ -161,6 +186,9 @@
                         .r-title{
                             text-transform: capitalize;
                             margin:0.5rem 0.2rem;
+                            @media(max-width: $breakpointSm){
+                                font-size: 0.8rem;
+                             }
                         }
                         .r-price{
                             font-weight: 900;
@@ -173,6 +201,9 @@
                             display: flex;
                             gap:0.7rem;
                             margin: 0.5rem 0.2rem;
+                            @media(max-width: $breakpointSm){
+                                font-size: 0.7rem;
+                             }
                             .init-price{
                                 display: flex;
                                 text-decoration: line-through;

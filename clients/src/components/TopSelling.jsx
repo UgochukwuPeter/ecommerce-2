@@ -1,13 +1,16 @@
 import './topSelling.scss';
 import { flashSales } from '../data';
 import {Link} from 'react-router-dom';
-
+import ProductCarousel from './ProductCarousel'
 const TopSelling = () => {
   return (
     <div className='top-selling'>
         <div className='main-wrapper'>
           <h1>Top Selling Items</h1>
         <div className='topselling-wrapper'>
+        <div className='mobile-flash'>
+            <ProductCarousel products={flashSales} showProgressBar={false} />
+            </div>
             {
                 flashSales.map((items)=>(
             <Link  to={`/product/${items.id}`} className='link content-edit' >
