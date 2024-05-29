@@ -57,13 +57,15 @@ $breakpointSm: 768px;
     @media(max-width: $breakpointSm){
         flex-wrap: nowrap;
         padding:0.3rem;
-        overflow-x:scroll;
+        overflow-x:auto;
+        white-space: nowrap;
     }
     .mobile-flash{
         display:none;
         @media(max-width: $breakpointSm){
             display: block;
-            background:inherit;
+            background:white;
+            display:inline-block
         }
     }
     .content-edit{

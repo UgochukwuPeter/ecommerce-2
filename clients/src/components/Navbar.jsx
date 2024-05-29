@@ -20,7 +20,8 @@ const Navbar = () => {
           <div className='mobile-menu'>
           <div className='mobile-menu-wrapper'>
           <div className='menu-header'>
-          <img onClick={mobileOpen} src="./icon-close.svg" alt="" />
+          <i onClick={mobileOpen} className='bx bx-x'></i>
+          {/* <img  src="./icon-close.svg" alt="" /> */}
           <div className='menu-logo'>
           <Link to='/' className='link logo'>
           <h1>E-Store</h1>

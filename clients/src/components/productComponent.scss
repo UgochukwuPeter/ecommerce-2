@@ -1,0 +1,41 @@
+.products{
+  width: 100%;
+  margin-left:26%;
+  background:white !important;
+  .product{
+    display:inline-block;
+    margin:0;
+    width: 18%;
+    background:#fff; 
+    img {
+        width: 100%;
+        object-fit: cover;
+        height: auto;
+        display: block;
+        margin-bottom: 10px;
+      }
+  
+      h3 {
+        margin: 10px 0;
+        font-size: 1rem;
+        font-weight: lighter;
+      }
+      h2{
+        font-weight: 500;
+        font-size: 1.3rem;
+        margin:0.5rem 0;
+        span{
+          text-decoration: line-through;
+        }
+      }
+  
+      p {
+        margin: 0;
+        font-size: 0.6rem;
+        color: #666;
+      }
+
+  }
+   
+
+}

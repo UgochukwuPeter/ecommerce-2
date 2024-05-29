@@ -4,7 +4,8 @@ import { useEffect, useState } from 'react';
 import ProgressBar from './ProgressBar';
 import { flashSales } from '../data';
 import {Link} from 'react-router-dom'
-import ProductCarousel from './ProductCarousel';
+// import ProductCarousel from './ProductCarousel';
+import ProductComponent from './ProductComponent';
 
 const FlashSales = () => {
     const [timeLeft, setTimeLeft]  = useState(365 *24 * 60 * 60 *1000);
@@ -39,7 +40,8 @@ const FlashSales = () => {
         <div className='flashsales-wrapper'>
             
             <div className='mobile-flash'>
-            <ProductCarousel products={flashSales}showProgressBar={true} />
+            <ProductComponent products={flashSales}   showProgressBar = {true}/>
+            {/* <ProductCarousel products={flashSales}showProgressBar={true} /> */}
             </div>
             {
                 flashSales.map((items)=>(

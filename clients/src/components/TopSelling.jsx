@@ -1,7 +1,8 @@
 import './topSelling.scss';
 import { flashSales } from '../data';
 import {Link} from 'react-router-dom';
-import ProductCarousel from './ProductCarousel'
+// import ProductCarousel from './ProductCarousel'
+import ProductComponent from './ProductComponent'
 const TopSelling = () => {
   return (
     <div className='top-selling'>
@@ -9,7 +10,8 @@ const TopSelling = () => {
           <h1>Top Selling Items</h1>
         <div className='topselling-wrapper'>
         <div className='mobile-flash'>
-            <ProductCarousel products={flashSales} showProgressBar={false} />
+        <ProductComponent products={flashSales}   showProgressBar = {false}/>
+            {/* <ProductCarousel products={flashSales} showProgressBar={false} /> */}
             </div>
             {
                 flashSales.map((items)=>(

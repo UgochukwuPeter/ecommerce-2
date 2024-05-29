@@ -35,8 +35,8 @@ $breakpoint_max_Md:800px;
                 gap:2rem;
                 padding-bottom: 0.7rem;
                 border-bottom: 1px solid #E5E4E2;
-                img{
-                    object-fit: contain;
+                i{
+                    font-size:1.5rem;
                 }
                 .menu-logo{
                     .logo{
@@ -253,7 +253,10 @@ $breakpoint_max_Md:800px;
             align-items: center;
             gap:0.2rem;
             cursor: pointer;
-
+            
+            @media(max-width: $breakpointSm){
+                margin-right:1rem;
+              }
             .cart-word{
                 @media(max-width: $breakpointSm){
                     display:none;
