@@ -27,6 +27,7 @@ $breakpointSm: 768px;
                 margin-bottom: 1rem;
                 @media(max-width: $breakpointSm){
                     font-size: 1.1rem;
+                    margin-bottom: 0;
                 }
             }
             .link-btn{
@@ -50,7 +51,7 @@ $breakpointSm: 768px;
                 @media(max-width: $breakpointSm){
                     display: block;
                     background:white;
-                    display:inline-block
+                    display:inline-block;
                 }
             }
             .content-edit{

@@ -1,9 +1,11 @@
 $breakpointSm: 768px;
+$breakpointVSm: 360px;
 .products{
     background:#E5E4E2;
     padding: 1rem 2rem;
     @media(max-width: $breakpointSm){
         padding:0.5rem;
+        margin-left:0;
     }
     .advert{
         width:100%;
@@ -154,6 +156,9 @@ $breakpointSm: 768px;
                     @media(max-width: $breakpointSm){
                         width:30%;
 
+                     }
+                     @media(max-width:$breakpointVSm){
+                        width:45%;
                      }
                     .content{
                         img{

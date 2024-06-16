@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 
 const ProductComponent = ({products, showProgressBar}) => {
   return (
-    <div className='products'>
+    <div className='products-mobile'>
       {products.map((product) => (
           <Link to={`/product/${product.id}`} className='link'>
           <div className="product" key={product.id}>

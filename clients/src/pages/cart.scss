@@ -1,6 +1,11 @@
+$breakpointSm: 768px;
 .empty-cart{
     background:#E5E4E2;
     padding: 1rem 2rem;
+    @media(max-width: $breakpointSm){
+        padding:0.5rem;
+        position:relative;
+    }
     .empty-cart-container{
         background:#fff;
         padding:1.5rem;
@@ -26,6 +31,9 @@
         .empty-desc{
             color:#E5E4E2;
             margin-bottom: 1.5rem;
+            @media(max-width: $breakpointSm){
+                text-align: center;
+            }
         }
         button{
             padding:1rem;
@@ -44,16 +52,24 @@
 .main-cart{
     background:#E5E4E2;
     padding:1rem 2rem;
+    @media(max-width: $breakpointSm){
+        padding:0.5rem;
+    }
     .cart-wrapper{
         display:flex;
         gap:1rem;
         margin-bottom: 1.2rem;
-
+        @media(max-width: $breakpointSm){
+           flex-direction: column;
+        }
         .cart-left{
             width:80%;
             background:#fff;
             padding:1.5rem;
             border-radius: 0.3rem;
+            @media(max-width: $breakpointSm){
+                width:100%;
+            }
             h1{
                 font-size: 1.2rem;
                 font-weight: 600;
@@ -113,6 +129,14 @@
         }
         .cart-right{
             width:20%;
+            @media(max-width: $breakpointSm){
+                width:100%;
+                position:fixed;
+                bottom:0;
+                left:0;
+                background:white !important;
+                z-index: 1;
+            }
             height:fit-content;
             background:#fff;
             border-radius: 0.3rem;
@@ -158,6 +182,9 @@
         padding:1.5rem;
         border-radius: 0.3rem;
         margin-top:1rem;
+        @media(max-width: $breakpointSm){
+            padding:0.5rem;
+        }
         h1{
             font-weight: 300;
             font-size: 1.5rem;
@@ -170,6 +197,9 @@
             justify-content: center;
             .content-edit{
                 width:18.5%;
+                @media(max-width: $breakpointSm){
+                    width:45%;
+                }
             }
         }
     }

@@ -1,7 +1,11 @@
-.products{
+$breakpointSm: 360px;
+.products-mobile{
   width: 100%;
   margin-left:26%;
   background:white !important;
+  @media(max-width: $breakpointSm){
+    margin-left:30%;
+}
   .product{
     display:inline-block;
     margin:0;

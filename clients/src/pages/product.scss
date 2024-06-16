@@ -1,9 +1,11 @@
 $breakpointSm: 768px;
+$breakpointVSm: 363px;
 .product{
     background:#E5E4E2;
     padding: 1rem 2rem;
     @media(max-width: $breakpointSm){
         padding:0.5rem;
+        position:relative;
     }
     .product-wrapper{
         display:flex;
@@ -23,9 +25,14 @@ $breakpointSm: 768px;
                 border-radius: 0.3rem;
                 display:flex;
                 gap:1rem;
-
+                @media(max-width: $breakpointSm){
+                    flex-direction: column;
+                }
                 .product-slide{
                     width:40%;
+                    @media(max-width: $breakpointSm){
+                        width:100%;
+                    }
                     .preview{
                         width:100%;
                         height:20rem;
@@ -96,6 +103,9 @@ $breakpointSm: 768px;
                 }
                 .product-details{
                     width:60%;
+                    @media(max-width: $breakpointSm){
+                       width:100%;
+                    }
                     .product-detail-wrapper{
                         h1{
                             font-size: 1.5rem;
@@ -188,6 +198,12 @@ $breakpointSm: 768px;
                             text-transform: uppercase;
                             font-size: 1.1rem;
                             cursor: pointer;
+                            @media(max-width: $breakpointSm){
+                                position: fixed;
+                                bottom:-1rem;
+                                left:0;
+                                z-index: 999;
+                            }
                         }
                     }
                 }
@@ -197,7 +213,15 @@ $breakpointSm: 768px;
                 margin:0.7rem 0;
                 border-radius: 0.3rem;
                 padding:1.5rem;
-
+                @media(min-width:501px) and  (max-width:768px){
+                    margin-top:31rem;
+                   }
+               @media(min-width:301px) and  (max-width:500px){
+                margin-top:27rem;
+               }
+                 @media(max-width: 300px){
+                    margin-top:31rem;
+                 }
                 .about-product-title{
                     font-size: 1.5rem;
                     font-weight: 300;
@@ -211,6 +235,9 @@ $breakpointSm: 768px;
                 p{
                     width:70%;
                     line-height:2rem;
+                    @media(max-width: $breakpointSm){
+                        width:100%;
+                    }
                 }
             }
             .product-specification{
@@ -229,12 +256,16 @@ $breakpointSm: 768px;
                     margin:0.8rem  0;
                     display:flex;
                     gap:0.5rem;
-
+                    @media(max-width: $breakpointSm){
+                        flex-direction: column;
+                    } 
                     .key-left{
                         width:50%;
                         border:1px solid  #E5E4E2;
                         border-radius: 0.2rem;
-
+                        @media(max-width: $breakpointSm){
+                           width: 100%;
+                        }      
                         .key-title{
                             font-size: 1.1rem;
                             font-weight: 300;
@@ -253,7 +284,9 @@ $breakpointSm: 768px;
                         width:50%;
                         border:1px solid  #E5E4E2;
                         border-radius: 0.2rem;
-
+                        @media(max-width: $breakpointSm){
+                            width:100%;
+                        }     
                         .key-title{
                             font-size: 1.1rem;
                             font-weight: 300;
@@ -279,8 +312,20 @@ $breakpointSm: 768px;
             padding:1.5rem;
             border-radius: 0.3rem;
             @media(max-width: $breakpointSm){
-                width:100%;
+                width:97%;
+                padding:1.5rem;
+                position: absolute;
+                // top:26%;
             }
+            @media(min-width:501px) and  (max-width:768px){
+                top:29%;
+               }
+           @media(min-width:301px) and  (max-width:500px){
+                top:28%;
+           }
+             @media(max-width: 300px){
+                top:25%;
+             }
             .delivery{
                 border-bottom: 1px solid #E5E4E2;
                 padding-bottom: 1rem;
@@ -329,6 +374,9 @@ $breakpointSm: 768px;
         padding:0.3rem;
         padding:1.5rem;
         border-radius: 0.3rem;
+        @media(max-width: $breakpointSm){
+            padding:0.5rem;
+        }
         h1{
             font-weight: 300;
             font-size: 1.5rem;
@@ -341,6 +389,9 @@ $breakpointSm: 768px;
             justify-content: center;
             .content-edit{
                 width:18.5%;
+                @media(max-width: $breakpointSm){
+                    width:45%;
+                }
             }
         }
     }
