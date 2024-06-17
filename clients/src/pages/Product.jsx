@@ -207,6 +207,13 @@ const month = fiveDaysFromOneHour.toLocaleString('default', { month: 'long' });
                 <p className='pick-up-desc'>Ready for delivery between {`${day} ${month}`} &  {`${day + 2} ${month}`} when you order within 1hr</p>
               </div>
             </div>
+            <div className='product-share-mobile'>
+                      <h1>Share this product</h1>
+                      <div className='share-icon'>
+                        <i class='bx bxl-facebook' onClick={handleShare}></i>
+                      <i class='bx bxl-twitter'></i>
+                      </div>
+                    </div>
           </div>
 
             </div>

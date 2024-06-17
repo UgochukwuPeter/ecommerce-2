@@ -205,11 +205,11 @@ $breakpointVSm: 363px;
                             cursor: pointer;
                             @media(max-width: $breakpointSm){
                                 position: fixed;
-                                bottom:-0.5rem;
+                                bottom:-1rem;
                                 left:0;
                                 z-index: 999;
                                 font-weight: 900;
-                                padding: 1rem 0 1.5rem 0;
+                                padding: 1rem 0;
                                 font-size: 1.7rem;
                             }
                         }
@@ -267,6 +267,33 @@ $breakpointVSm: 363px;
                             margin-bottom: 0.5rem;
                         }
                     }
+                }
+                .product-share-mobile{
+                    border-top:1px solid #E5E4E2;
+                    margin:1rem 0;
+                    h1{
+                        font-size: 1.5rem;
+                        font-weight: 300;
+                        text-transform: uppercase;
+                        padding:0.5rem 0;
+                    }
+                    .share-icon{
+                        display:flex;
+                        gap:1rem;
+
+                        i{
+                            border:1px solid black;
+                            padding:0.3rem;
+                            border-radius: 50%;
+                            cursor: pointer;
+
+                            &:hover{
+                                background:black;
+                                color:#fff;
+                            }
+                        }
+                    }
+
                 }
             }
             .about-product{
