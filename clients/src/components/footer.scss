@@ -125,10 +125,16 @@ $breakpointSm: 768px;
         .one{
             h3{
                 margin-bottom:1rem;
+                @media(max-width: $breakpointSm){
+                    font-size: 1.1rem;
+                }
             }
             ul >li{
                 list-style: none;
                 margin-bottom: 0.7rem;
+                @media(max-width: $breakpointSm){
+                    font-size: 0.8rem;
+                }
             }
         }
         }

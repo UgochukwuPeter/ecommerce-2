@@ -164,12 +164,51 @@ const month = fiveDaysFromOneHour.toLocaleString('default', { month: 'long' });
                       )
                       
                     }
+                  
                     <button className='cart-btn'><i class='bx bx-cart'></i> Add to Cart</button>
                   </div>
                     ))
                   }
-                  
                 </div>
+            </div>
+            <div className='mobile-delivery-view'>
+                  <div className="right-product-view">
+            <div className='delivery'>
+              <h1>Delivery & Returns</h1>
+              <p>Fee Delivery on thousands of products</p>
+            </div>
+
+            <div className='location'>
+                <h1>Choose your location</h1>
+                <select onChange={handleStateChange}>
+                <option value="">Select a state</option>
+              {Object.keys(getState).map((state) => (
+             <option value={state}>{state}</option>
+            ))}
+            </select>
+            {showLGAOptions && (
+            <select onChange={handleLGAChange}>
+              <option value="">Select a local government</option>
+              {getState[selectedState].map((lga) => (
+              <option value={lga}>{lga}</option>
+              ))}
+             </select>
+            )}
+            </div>
+            <div className='pick-up-info'>
+              <div className='pick-up'>
+                <p className='pick-up-title'>Pickup Station</p>
+                <p className='pick-up-amount'>Delivery Fees N 250</p>
+                <p className='pick-up-desc'>Arriving at pickup station between {`${day} ${month}`} & {`${day + 2} ${month}`} when you order within  next 1hr</p>
+              </div>
+              <div className='pick-up'>
+                <p className='pick-up-title'>Door  Delivery</p>
+                <p className='pick-up-amount'>Delivery Fees N 620</p>
+                <p className='pick-up-desc'>Ready for delivery between {`${day} ${month}`} &  {`${day + 2} ${month}`} when you order within 1hr</p>
+              </div>
+            </div>
+          </div>
+
             </div>
            <div className='about-product'>
             {
