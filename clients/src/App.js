@@ -17,6 +17,8 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Sell from './components/Sell';
 import { FacebookProvider} from 'react-facebook';
+import SellRegistration from './pages/SellRegistration';
+import SellerCenter from  './pages/SellerCenter';
 const Layout =()=>{
   return(
     <div>
@@ -53,7 +55,7 @@ const router  = createBrowserRouter([
         path:"/dashboard",
         element:<Dashboard/>
       }
-
+     
     ]
   },
   {
@@ -63,6 +65,14 @@ const router  = createBrowserRouter([
   {
     path: "/login",
     element: <Login />
+  },
+  {
+    path:"/sellerRegister",
+    element:<SellRegistration/>
+  },
+  {
+    path:"/sellDashboard",
+    element:<SellerCenter/>
   }
 ]);
 function App() {

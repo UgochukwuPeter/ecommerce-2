@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './footer.scss';
 
 const Footer = () => {
@@ -82,7 +83,7 @@ const Footer = () => {
         <div className="one">
           <h3>MAKE MONEY WITH E-COM</h3>
           <ul>
-            <li>Sell on E-Com</li>
+            <Link to='/sellerRegister' className='link'><li>Sell on E-Com</li></Link>
             <li>Vendor hub</li>
             <li>Become a Sales Consultant</li>
             <li>Become a Logistics Service Partner</li>

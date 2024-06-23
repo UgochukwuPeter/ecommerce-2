@@ -5,6 +5,7 @@ import { ShoppingCartOutlined } from '@mui/icons-material';
 import {Link} from 'react-router-dom';
 import { categories } from '../data';
 const Navbar = () => {
+  const  user = true;
   const[isOpen,setIsOpen] = useState(false);
   const[isMobileOpen, setIsMobileOpen] = useState(false);
   const toggleDropDown =()=>{
@@ -73,21 +74,33 @@ const Navbar = () => {
       </div>
       <div className="right">
         <div className={`dropdown ${isOpen ? 'open': ''}`}>
-        <button className='dropdown-toggle' onClick={toggleDropDown}><i class='bx bx-user' ></i>Account <span className={`arrow ${isOpen  ? 'up' :  'down'}`}></span> </button>
-        <Link to='/login' className='link'><button className='mobile-account'><i class='bx bx-user' ></i></button></Link>
+          {
+            user ? <button className='dropdown-toggle' onClick={toggleDropDown}><i class='bx bx-user' ></i>HI, Peter <span className={`arrow ${isOpen  ? 'up' :  'down'}`}></span> </button>:
+            <button className='dropdown-toggle' onClick={toggleDropDown}><i class='bx bx-user' ></i>Account <span className={`arrow ${isOpen  ? 'up' :  'down'}`}></span> </button>
+          }
+        {
+          user ? <Link to='/dashboard' className='link'><button className='mobile-account'><i class='bx bx-user' ></i></button></Link>:
+          <Link to='/login' className='link'><button className='mobile-account'><i class='bx bx-user' ></i></button></Link>
+        }
         {
           isOpen && (
             <div className='dropdown-content'>
-              <button className='sign-in'>Sign in</button>
+              {
+                user ? <button className='sign-in'>Logout</button>: <Link to='/login' className='link'><button className='sign-in'>Sign In</button></Link>
+              }
+              
               <div className='dropdown-info'>
                 <div className='dropdown-info-content'>
                   <i class='bx bx-user' ></i>
-                  <p>Account</p>
+                  {
+                    user ? <Link to='/dashboard' className='link'><p>Account</p></Link>: <Link to='/login' className='link'><p>Account</p></Link>
+                  }
+                  
                 </div>
                 <Link to='/cart' className='link'>
                 <div className='dropdown-info-content'>
                 <i class='bx bxs-inbox'></i>
-                <p>Orders</p>
+                <Link to='/cart' className='link'><p>Orders</p></Link>
                 </div>
                 </Link>
                
