@@ -9,9 +9,10 @@ const SellRegistration = () => {
     email: '',
     password: '',
     confirmPassword: '',
-    firstName:'',
-    lastName:'',
+    companiesAddress:'',
+    companiesRegistrationNo:'',
     phone:'',
+    aboutCompany:'',
   });
   const handleNext = () => {
     if (validateForm()) {
@@ -45,7 +46,7 @@ const SellRegistration = () => {
     let errors = {};
     if(step === 1){
       if(!formData.companyName){
-        errors.comapnyName  =  'Company Name is required';
+        errors.companyName  =  'Company Name is required';
       }
       if (!formData.email) {
         errors.email = 'Email is required';
@@ -61,20 +62,22 @@ const SellRegistration = () => {
       }
       
     }else if (step === 2){
-      if (!formData.firstName) {
-        errors.firstName = 'First Name is required';
-      }else if (/^[0-9]/.test(formData.firstName)) {
-        errors.firstName = 'First Name cannot start with a number';
-      }else if (/^[0-9]/.test(formData.lastName)) {
-        errors.lastName = 'Last Name cannot start with a number';
+      if (!formData.companiesAddress) {
+        errors.companiesAddress = 'Companies Address is required';
+      }else if (/^[0-9]/.test(formData.companiesAddress)) {
+        errors.companiesAddress = 'Companies  Address cannot start with a number';
       }
-      if (!formData.lastName) {
-        errors.lastName = 'Last Name is required';
+      if (!formData.companiesRegistrationNo) {
+        errors.companiesRegistrationNo = 'Companies Registration is required';
       }
       if (!formData.phone) {
         errors.phone = 'Phone Number is required';
       }else if(isNaN(formData.phone)){
         errors.phone = 'Phone must be a valid number';
+      }
+    }else if(step === 3){
+      if(!formData.aboutCompany){
+        errors.aboutCompany = 'A short description of your company is required';
       }
     }
     setErrors(errors);
@@ -83,21 +86,22 @@ const SellRegistration = () => {
     // }
     return Object.keys(errors).length === 0;
   };
-  console.log('Password:', formData.password);
-console.log('Confirm Password:', formData.confirmPassword);
+//   console.log('Password:', formData.password);
+// console.log('Confirm Password:', formData.confirmPassword);
+console.log(formData);
 
-  const handlePasswordChange = (event) => {
-    const password = event.target.value;
-    if (password.length > 0) {
-      const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
-      if (!passwordRegex.test(password)) {
-        setErrors({ ...errors, password: 'Password must start with an uppercase letter, followed by a lowercase letter, a number, and a special character' });
-        // setFormData({...formData,password:''});
-      } else {
-        setFormData({ ...formData, password: password });
-      }
-    }
-  };
+  // const handlePasswordChange = (event) => {
+  //   const password = event.target.value;
+  //   if (password.length > 0) {
+  //     const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]$/;
+  //     if (!passwordRegex.test(password)) {
+  //       setErrors({ ...errors, password: 'Password must start with an uppercase letter, followed by a lowercase letter, a number, and a special character' });
+  //       // setFormData({...formData,password:''});
+  //     } else {
+  //       setFormData({ ...formData, password: password });
+  //     }
+  //   }
+  // };
   return (
     <div>
        {step === 1 && (
@@ -108,7 +112,7 @@ console.log('Confirm Password:', formData.confirmPassword);
           handleNext={handleNext}
           validateForm={validateForm}
           errors={errors}
-          handlePasswordChange={handlePasswordChange}
+          // handlePasswordChange={handlePasswordChange}
         />
       )}
        {step === 2 && (
@@ -128,12 +132,13 @@ console.log('Confirm Password:', formData.confirmPassword);
           setFormData={setFormData}
           handleFormSubmit={handleFormSubmit}
           handlePrev={handlePrev}
+          errors={errors}
         />
       )}
     </div>
   )
 };
-const Form1 = ({ formData, setFormData, handleNext,validateForm,errors,handlePasswordChange,handleInputChange }) => {
+const Form1 = ({ formData, setFormData, handleNext,validateForm,errors,handleInputChange }) => {
   return (
     <div className='form1'>
       <div className='form1-header'>
@@ -150,7 +155,7 @@ const Form1 = ({ formData, setFormData, handleNext,validateForm,errors,handlePas
             setFormData({ ...formData, companyName: event.target.value })
           }
         />
-           {errors.comapnyName && <p className='error'>{errors.companyName  }</p>}
+           {errors.companyName && <p className='error'>{errors.companyName  }</p>}
       <input
           type="email"
           placeholder='Email'
@@ -164,7 +169,7 @@ const Form1 = ({ formData, setFormData, handleNext,validateForm,errors,handlePas
         type="password"
         placeholder='Password'
         value={formData.password}
-        onChange={handlePasswordChange}
+        onChange={(event)=> setFormData({...formData, password: event.target.value})}
       />
         {errors.password && <p className='error'>{errors.password}</p>}
         <input
@@ -195,28 +200,28 @@ const Form2 = ({ formData, setFormData, handleNext, handlePrev,validateForm,erro
     <div className='form1'>
       <div className='form1-header'>
       <i className='bx bx-store-alt'></i>
-      <h1>Personal details</h1>
+      <h1>Companies details</h1>
       <p>We just need you to fill in some details</p>
       </div>
       <form>
       <input
           type="text"
-          placeholder='First Name*'
-          value={formData.firstName}
+          placeholder='Companies Address*'
+          value={formData.companiesAddress}
           onChange={(event) =>
-            setFormData({ ...formData, firstName: event.target.value })
+            setFormData({ ...formData, companiesAddress: event.target.value })
           }
         />
-        {errors.firstName && <p className='error'>{errors.firstName}</p>}
+        {errors.companiesAddress && <p className='error'>{errors.companiesAddress}</p>}
         <input
           type="text"
-          placeholder='Last Name*'
-          value={formData.lastName}
+          placeholder='Companies Registration No*'
+          value={formData.companiesRegistrationNo}
           onChange={(event) =>
-            setFormData({ ...formData, lastName: event.target.value })
+            setFormData({ ...formData, companiesRegistrationNo: event.target.value })
           }
         />
-        {errors.lastName && <p className='error'>{errors.lastName}</p>}
+        {errors.companiesRegistrationNo && <p className='error'>{errors.companiesRegistrationNo}</p>}
         <input
           type="text"
           placeholder='Phone Number'
@@ -241,29 +246,18 @@ const Form2 = ({ formData, setFormData, handleNext, handlePrev,validateForm,erro
    
   );
 };
-const Form3 = ({ formData, setFormData, handleFormSubmit, handlePrev }) => {
+const Form3 = ({ formData, setFormData, handleFormSubmit, handlePrev,errors }) => {
   return (
     <div className='form1'>
       <div className='form1-header'>
       <i className='bx bx-store-alt'></i>
-      <h1>Personal details</h1>
+      <h1>Companies details</h1>
       <p>Almost there... Just a few more details</p>
       </div>
       <form onSubmit={handleFormSubmit}>
-      <select onChange={(event) => {
-      setFormData({ ...formData, gender: event.target.value });
-      }}>
-        <option value="">Gender*</option>
-        <option value="male">Male</option>
-        <option value="female">Female</option>
-    </select>
-    <input
-          type="date"
-          value={formData.dateOfBirth}
-          onChange={(event) =>
-            setFormData({ ...formData, dateOfBirth: event.target.value })
-          }
-        />
+      <textarea name="" id="" placeholder='About company' onChange={(event)=>{setFormData({...formData, aboutCompany: event.target.value})}}></textarea>
+      {errors.aboutCompany && <p className='error'>{errors.aboutCompany}</p>}
+
       
       {/* <button onClick={handlePrev}>Previous</button> */}
       <button type="submit">Continue</button>

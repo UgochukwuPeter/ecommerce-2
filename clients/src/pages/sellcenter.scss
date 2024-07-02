@@ -1,0 +1,12 @@
+.sell-center{
+    background:#E5E4E2;
+    padding: 2rem 3rem;
+    display:flex;
+    gap:0.5rem;
+    .sell-center-left{
+        width:20%;
+    }
+    .sell-center-right{
+        width:80%;
+    }
+}
